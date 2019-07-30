@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <ul class="list-group">
+        {% for profile in profiles %}
+        {% include "profile.html" %}
+        {% endfor %}
+    </ul>       
+{% endblock %}

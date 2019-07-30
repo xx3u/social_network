@@ -1,0 +1,17 @@
+<!-- Header - set the background image for the header in the line below -->
+  <div class=”wrapper”>
+    {% if profile.image %}
+    <img class="img-fluid d-block mx-auto" src="{{ profile.image.url }}" alt="">
+    {% endif %}  
+  </div>
+
+  <!-- Content section -->
+  <section class="py-5">
+    <div class="container">
+      <h1>{{ profile.username }}</h1>
+      <p class="lead">Character</p>
+    </div>
+  </section>
+
+  
+  
