@@ -1,9 +1,9 @@
 from django.views.generic import ListView
 
-from .models import Profile
+from .models import Image, Profile
 
 
 class HomeView(ListView):
-    model = Profile
-    context_object_name = 'profiles'
+    model = Image
+    context_object_name = 'images'
     template_name = 'home.html'
