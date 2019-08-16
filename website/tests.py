@@ -1,3 +1,4 @@
-from django.test import TestCase
-
-# Create your tests here.
+def test_model(db, data):
+    user, image = data
+    assert image.user.username == 'john'
+    assert image.image == 'john.jpg'

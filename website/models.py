@@ -14,7 +14,6 @@ class Image(models.Model):
 
 
 class Profile(models.Model):
-    # user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     # birthday = models.DateTimeField()
     # contact_number = models.IntegerField()
-    
