@@ -1,2 +1,2 @@
 [run]
-omit = manage.py, social_network/wsgi.py, */apps.py, */urls.py, */views.py
+omit = manage.py, social_network/wsgi.py, */apps.py, */urls.py, */views.py, fabfile.py
