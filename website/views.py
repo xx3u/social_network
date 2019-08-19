@@ -1,6 +1,6 @@
 from django.views.generic import ListView
 
-from .models import Image, Profile
+from website.models import Image
 
 
 class HomeView(ListView):
