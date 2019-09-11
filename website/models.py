@@ -9,9 +9,6 @@ class Image(models.Model):
         on_delete=models.CASCADE
     )
 
-    def __str__(self):
-        return self.user
-
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
