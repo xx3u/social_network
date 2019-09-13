@@ -1,10 +1,7 @@
-from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render
+# from django.shortcuts import redirect, reverse
 from django.views.generic import ListView, View
 from django.contrib.auth.forms import UserCreationForm
-
-from django.views import View
 
 from website.models import Image
 
@@ -17,12 +14,11 @@ class HomeView(ListView):
 
 class RegisterView(View):
     def get(self, request):
-        return render(request, 'register.html', { 'form': UserCreationForm() })
+        return render(request, 'register.html', {'form': UserCreationForm()})
 
     def post(self, request):
         form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            return redirect(reverse('login'))
+        # if form.is_valid():
+        #     return redirect(reverse('login'))
 
-        return render(request, 'register.html', { 'form': form })
+        return render(request, 'register.html', {'form': form})

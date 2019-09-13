@@ -1,8 +1,6 @@
 from lxml import html
-from django.contrib.auth.models import User
 from django.urls import reverse
 
-from website.models import Image, Profile
 
 def test_login(db, client, data):
     response = client.post(
@@ -48,3 +46,13 @@ def test_home(db, client, data):
     print(a[0].text)
     assert len(a) == 1
     assert a[0].text == 'Hi, test!\n            '
+
+
+def test_register_view(db, client, data):
+    response = client.get('/register/')
+    assert response.status_code == 200
+
+    response = client.post(
+        '/register/', {'username': 'test', 'password': 'test'}
+    )
+    assert response.status_code == 200
