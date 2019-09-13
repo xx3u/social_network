@@ -3,7 +3,7 @@ language: python
 python:
 - '3.6'
 install: pip install -r requirements.txt
-script: pytest -v --cov . --cov-report term-missing --cov-fail-under=98
+script: pytest -v --cov . --cov-report term-missing --cov-fail-under=100
 before_install:
 - openssl aes-256-cbc -K $encrypted_a65d797d744d_key -iv $encrypted_a65d797d744d_iv
   -in aws3.pem.enc -out aws3.pem -d

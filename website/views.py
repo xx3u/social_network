@@ -15,25 +15,6 @@ class HomeView(ListView):
     template_name = 'home.html'
 
 
-def logout_view(request):
-    logout(request)
-    return redirect('logout')
-
-
-# def login_view(request):
-#     form = LoginForm(request.POST)
-#     if request.method == 'POST':
-#         if form.is_valid():
-#             username = request.POST['username']
-#             password = request.POST['password']
-#             user = authenticate(username=username,
-#                                 password=password)
-#             if user is not None:
-#                 if user.is_active:
-#                     login(request, user)
-#     return HttpResponseRedirect('/')
-
-
 class RegisterView(View):
     def get(self, request):
         return render(request, 'register.html', { 'form': UserCreationForm() })
