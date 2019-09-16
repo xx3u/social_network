@@ -4,12 +4,11 @@ python:
 - '3.6'
 install: pip install -r requirements.txt
 script: pytest -v --cov . --cov-report term-missing --cov-fail-under=100
-before_install:
-- openssl aes-256-cbc -K $encrypted_a65d797d744d_key -iv $encrypted_a65d797d744d_iv
-  -in aws3.pem.enc -out aws3.pem -d
-
 deploy:
   provider: script
   script: fab -i aws3.pem -H ubuntu@13.48.78.197 deploy
   on:
-    branc: master 
+    branch: master
+before_install:
+- openssl aes-256-cbc -K $encrypted_a65d797d744d_key -iv $encrypted_a65d797d744d_iv
+  -in aws3.pem.enc -out aws3.pem -d
