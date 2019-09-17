@@ -1,3 +1,5 @@
 # social_network
 
-pytest -v --cov . --cov-report term-missing --cov-fail-under=100 --flake8
+[![Build Status](https://travis-ci.com/xx3u/social_network.svg?branch=master)](https://travis-ci.com/xx3u/social_network)
+
+[![codecov](https://codecov.io/gh/xx3u/social_network/branch/master/graph/badge.svg)](https://codecov.io/gh/xx3u/social_network)

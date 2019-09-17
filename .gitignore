@@ -3,4 +3,5 @@ db.sqlite3
 __pycache__
 media
 .coverage
+*.xml
 setuptools-33.1.1.zip
