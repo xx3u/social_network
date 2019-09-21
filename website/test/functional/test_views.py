@@ -1,12 +1,16 @@
 from lxml import html
 from django.urls import reverse
+from django.http import HttpResponse
 
 
 def test_login(db, client, data):
+    login = client.login(username='test', password='test')
     response = client.post(
         '/login/', {'username': 'test', 'password': 'test'}
     )
-    assert response.status_code == 302
+    redirect = HttpResponse(response)
+    assert login is True
+    assert redirect.status_code == 200
 
 
 def test_login_fail(db, client, data):
@@ -14,7 +18,8 @@ def test_login_fail(db, client, data):
         '/login/', {'username': 'test', 'password': 'wrongpassword'}
     )
     assert response.status_code == 200
-    assert b'Please enter a correct username and password.' in response.content
+    assert 'Please enter a correct username and password.' in response.content.decode()
+    print(response.content)
 
 
 def test_logout(db, client, data):
