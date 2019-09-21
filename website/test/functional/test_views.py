@@ -19,7 +19,6 @@ def test_login_fail(db, client, data):
     )
     assert response.status_code == 200
     assert 'Please enter a correct username and password.' in response.content.decode()
-    print(response.content)
 
 
 def test_logout(db, client, data):
