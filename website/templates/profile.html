@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <!-- <div class="col-md-4">
+        <div class="card">
+          <div class="image">
+                <img class="card-image-top img-fluid" src="{{ user.image.url }}" >
+            </div>
+            <div class="card-block">
+              <h4 class="card-title">{{ user.username}}</h4>
+              <p class="card-text">{{ user.alter_ego }}</p>
+              <p class="card-text">{{ user.birthday }}</p>
+              <p><a class="btn btn-secondary" href="{% url 'home' %}" role="button">Back Home »</a></p>
+            </div>
+            </div>
+        </div> -->
+
+    <div class="content-section">
+        <div class="media">
+            <img class="card-image-top img-fluid" src="{{ user.image.url }}" alt="">
+            <div class="media-body">
+                <h2 class="account-heading">{{ user.username}}</h2>
+                <p class="text-secondary">{{ user.alter_ego }}</p>
+                <p class="text-secondary">{{ user.birthday }}</p>
+            </div>
+        </div>
+    </div>     
+{% endblock %}

@@ -5,3 +5,4 @@ media
 .coverage
 *.xml
 setuptools-33.1.1.zip
+.idea

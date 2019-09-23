@@ -1,9 +1,11 @@
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, View
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from .forms import UserRegisterForm
 
-from website.models import Image, CustomUser
+from website.models import Image, Profile
 
 
 class HomeView(ListView):
@@ -12,19 +14,29 @@ class HomeView(ListView):
     template_name = 'home.html'
 
 
+def about(request):
+    return render(request, 'about.html', {'title': 'About'})
+
+
 class UserCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
-        model = CustomUser
+        model = Profile
 
 
 class RegisterView(View):  # pragma: no cover
     def get(self, request):
-        return render(request, 'register.html', {'form': UserCreationForm()})
+        return render(request, 'register.html', {'form': UserRegisterForm()})
 
     def post(self, request):
-        form = UserCreationForm(request.POST)
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, f'Your account has been created! You are now able to log in')
             return redirect('login')
         return render(request, 'register.html', {'form': form})
+
+
+@login_required
+def profile(request):  # pragma: no cover
+    return render(request, 'profile.html')

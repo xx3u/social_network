@@ -60,3 +60,15 @@ def test_register_view(db, client, data):
         '/register/', {'username': 'test', 'password': 'test'}
     )
     assert response.status_code == 200
+
+
+def test_about(db, client, data):
+    response = client.get('/about/')
+    assert response.status_code == 200
+
+
+def test_profile(db, client, data):
+    response = client.get('/profile/')
+    assert response.status_code == 302
+    redirect = HttpResponse(response)
+    assert redirect.status_code == 200

@@ -8,7 +8,7 @@
   <!-- Content section -->
   <section class="py-5">
     <div class="container">
-      <h1 align="center">{{ image.user }}</h1>
-      <p class="lead" align="center">Greetings</p>
+      <h2 align="center"><a class="profile" href="{% url 'profile' %}">{{ image.user }}</a></h2>
+      <p class="lead" align="center">{{ image.user.alter_ego }}</p>
     </div>
   </section>

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 
     'website',
 ]
@@ -127,5 +128,8 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
 
-AUTH_USER_MODEL = 'website.CustomUser'
+AUTH_USER_MODEL = 'website.Profile'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

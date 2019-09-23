@@ -1,0 +1,27 @@
+/* .card {
+    margin-bottom: 10px;
+}
+
+.image {
+    position: center;
+    padding-bottom: 100%;
+}
+
+.image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+/* .media {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 20%;
+  }
