@@ -66,7 +66,5 @@ def test_about(db, client, data):
 
 
 def test_profile(db, client, data):
-    response = client.get('/profile/')
-    assert response.status_code == 302
-    redirect = HttpResponse(response)
-    assert redirect.status_code == 200
+    response = client.get('/profile/', follow=True)
+    assert response.status_code == 200
