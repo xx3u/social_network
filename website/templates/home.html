@@ -2,8 +2,19 @@
 
 {% block content %}
     <ul class="list-group">
-        {% for image in images %}
-        {% include "image.html" %}
-        {% endfor %}
+        <div class="card-columns">
+            {% for profile in profiles %}
+            <div class="card">        
+                {% if profile.image %}
+                <img src="{{ profile.image.url }}" class="card-img-top" alt="">
+                {% endif %} 
+                <div class="card-body">
+                <h5 class="card-title"><a class="profile" href="{% url 'profile' %}">{{ profile.username }}</a></h5>
+                <p class="card-text">{{ profile.alter_ego }}</p>
+                <a href="#" class="btn btn-primary">Stories</a>
+                </div>
+            </div>        
+            {% endfor %}
+        </div>
     </ul>       
 {% endblock %}

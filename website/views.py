@@ -5,12 +5,12 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm
 
-from website.models import Image, Profile
+from website.models import Profile
 
 
 class HomeView(ListView):
-    model = Image
-    context_object_name = 'images'
+    model = Profile
+    context_object_name = 'profiles'
     template_name = 'home.html'
 
 
@@ -24,13 +24,13 @@ class UserCreationForm(UserCreationForm):
         model = Profile
 
 
-class RegisterView(View):  # pragma: no cover
+class RegisterView(View):
     def get(self, request):
         return render(request, 'register.html', {'form': UserRegisterForm()})
 
     def post(self, request):
         form = UserRegisterForm(request.POST)
-        if form.is_valid():
+        if form.is_valid():  # pragma: no cover
             form.save()
             messages.success(request, f'Your account has been created! You are now able to log in')
             return redirect('login')
@@ -38,5 +38,5 @@ class RegisterView(View):  # pragma: no cover
 
 
 @login_required
-def profile(request):  # pragma: no cover
+def profile(request):
     return render(request, 'profile.html')
