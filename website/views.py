@@ -30,7 +30,7 @@ class RegisterView(View):
 
     def post(self, request):
         form = UserRegisterForm(request.POST)
-        if form.is_valid():  # pragma: no cover
+        if form.is_valid():
             form.save()
             messages.success(request, f'Your account has been created! You are now able to log in')
             return redirect('login')

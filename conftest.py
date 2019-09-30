@@ -8,6 +8,7 @@ def data():
     user = Profile.objects.create_user(
         username='idea',
         password='test',
+        email='test@test.com',
         first_appearance='2019-09-11',
         alter_ego='admin',
         image='test.jpg',
