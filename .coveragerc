@@ -1,2 +1,2 @@
 [run]
-omit = manage.py, social_network/wsgi.py, */apps.py, fabfile.py, conftest.py, */migrations/*, */__init__.py/*, *settings.py*
+omit = manage.py, social_network/wsgi.py, */apps.py, fabfile.py, conftest.py, */migrations/*, */__init__.py, *settings.py*

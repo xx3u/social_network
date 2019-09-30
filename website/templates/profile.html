@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+ 
+    <div class="content-section">
+        <div class="media">
+            <img class="card-image-top img-fluid" src="{{ user.image.url }}" alt="">
+            <div class="media-body">
+                <h2 class="account-heading">{{ user.username}}</h2>
+                <p class="text-secondary">Alter ego: {{ user.alter_ego }}</p>
+                <p class="text-secondary">First appearance: {{ user.first_appearance }}</p>
+                <p class="text-secondary">Species: {{ user.species }}</p>
+                <p class="text-secondary">Place of origin: {{ user.place_of_origin }}</p>
+                <p class="text-secondary">Team affiliations: {{ user.team_affiliations }}</p>
+                <p class="text-secondary">Abilities: {{ user.abilities }}</p>
+            </div>
+        </div>
+    </div>     
+{% endblock %}
